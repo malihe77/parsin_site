@@ -1,0 +1,19 @@
+{% extends "list_topic/base.html" %}
+{% block title %}list_topic{% endblock %}
+{% block content %} 
+<h1> topics</h1> 
+{% for post in posts %} 
+<h2> 
+    <a href="{{ post1.get_absolute_url }}"> 
+        {{ post.Research_title}} 
+    </a> 
+</h2>
+<p class="date"> 
+    Published {{ post.publish }} by {{ post.author }} 
+</p> 
+<hr>
+{{ post.Research_content|truncatewords:30|linebreaks }} 
+<hr>
+{%endfor %} 
+{% include "pagination.html" with page=posts %} 
+{% endblock %}
