@@ -4,7 +4,7 @@
 <h1> topics</h1> 
 {% for post in posts %} 
 <h2> 
-    <a href="{{ post1.get_absolute_url }}"> 
+    <a href="{{ post.get_absolute_url }}"> 
         {{ post.Research_title}} 
     </a> 
 </h2>
@@ -13,6 +13,7 @@
 </p> 
 <hr>
 {{ post.Research_content|truncatewords:30|linebreaks }} 
+<h6>visits : <b><i> {{post.visits}} </i></b></h6>
 <hr>
 {%endfor %} 
 {% include "pagination.html" with page=posts %} 
